@@ -1,7 +1,7 @@
 # WritingLidarTutorial(C)
 Description: This tutorial covers how to write a lidar tutorial in C.
 Tutorial Level: BEGINNER
-Next Tutorial: [Examining the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/examine_the_simple_lidar_tutorial.md)
+Next Tutorial: [Examining the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/examine_the_simple_lidar_tutorial.md)
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ mkdir beginner_tutorials
 cd beginner_tutorials
 ```
 ### Create the lidar_tutorial.cpp file within the beginner_tutorials project and paste the following inside it: 
-[https://raw.github.com/YDLIDAR/ydlidar_tutorials/c_tutorials/lidar_tutorial/lidar_tutorial.c](https://raw.github.com/YDLIDAR/ydlidar_tutorials/c_tutorials/lidar_tutorial/lidar_tutorial.c)
+[https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/c_tutorials/lidar_tutorial/lidar_tutorial.c](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/c_tutorials/lidar_tutorial/lidar_tutorial.c)
 
 ```c
 //
@@ -305,7 +305,7 @@ Destroy YDLidar, Free up memory.
 You need to create a CMakeLists.txt file.
 
 The generated CMakeLists.txt should look like this:
-[https://raw.github.com/YDLIDAR/ydlidar_tutorials/c_tutorials/lidar_tutorial/CMakeLists.txt](https://raw.github.com/YDLIDAR/ydlidar_tutorials/c_tutorials/lidar_tutorial/CMakeLists.txt)
+[https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/c_tutorials/lidar_tutorial/CMakeLists.txt](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/c_tutorials/lidar_tutorial/CMakeLists.txt)
 
 ```cmake
 cmake_minimum_required(VERSION 2.8)
@@ -353,4 +353,4 @@ cd build
 cmake ..
 make j4  
 ```
-Now that you have written a simple lidar tutorial, let's [examine the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/examine_the_simple_lidar_tutorial.md). 
+Now that you have written a simple lidar tutorial, let's [examine the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/examine_the_simple_lidar_tutorial.md). 

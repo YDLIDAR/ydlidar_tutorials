@@ -1,7 +1,7 @@
 # WritingLidarTutorial(python)
 Description: This tutorial covers how to write a lidar tutorial in Python.
 Tutorial Level: BEGINNER
-Next Tutorial: [Examining the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/examine_the_simple_lidar_tutorial.md)
+Next Tutorial: [Examining the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/examine_the_simple_lidar_tutorial.md)
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ mkdir beginner_tutorials
 cd beginner_tutorials
 ```
 ### Create the lidar_tutorial.py file within the beginner_tutorials project and paste the following inside it: 
-[https://raw.github.com/YDLIDAR/ydlidar_tutorials/pyhton_tutorials/lidar_tutorial/lidar_tutorial.py](https://raw.github.com/YDLIDAR/ydlidar_tutorials/python_tutorials/lidar_tutorial/lidar_tutorial.py)
+[https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/pyhton_tutorials/lidar_tutorial/lidar_tutorial.py](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/python_tutorials/lidar_tutorial/lidar_tutorial.py)
 
 ```python
 import os
@@ -147,4 +147,4 @@ Stop the device scanning thread and disable motor.
 Uninitialize the SDK and Disconnect the LiDAR.
 
 
-Now that you have written a simple lidar tutorial, let's [examine the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/examine_the_simple_lidar_tutorial.md). 
+Now that you have written a simple lidar tutorial, let's [examine the simple lidar tutorial](https://github.com/YDLIDAR/ydlidar_tutorials/blob/master/examine_the_simple_lidar_tutorial.md). 

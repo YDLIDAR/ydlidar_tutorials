@@ -1,7 +1,7 @@
 # Examining the Simple Lidar Tutorial
 Description: This tutorial examines running the simple lidar tutorial.
 Tutorial Level: BEGINNER
-Previous Tutorial: Writing a Simple Lidar Tutorial ([c](writing_lidar_tutorial_c.md))([python](writing_lidar_tutorial_python.md)) ([c++](writing_lidar_tutorial_c++.md))
+Previous Tutorial: Writing a Simple Lidar Tutorial ([c](c_tutorials/lidar_tutorial/writing_lidar_tutorial_c.md))([python](python_tutorials/lidar_tutorial/writing_lidar_tutorial_python.md)) ([c++](cpp_tutorials/lidar_tutorial/writing_lidar_tutorial_c++.md))
 
 ## Table of Contents
 - [Running the Lidar Turorial](#running-the-lidar-turorial)
