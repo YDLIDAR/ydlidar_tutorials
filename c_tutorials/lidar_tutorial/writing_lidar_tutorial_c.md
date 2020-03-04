@@ -69,7 +69,8 @@ int main(int argc, const char *argv[]) {
     char port[50] = "/dev/ydlidar";
     LidarPort ports;
     int size = lidarPortList(&ports);
-    for(int i =0; i < size; i++) {
+    int i = 0;
+    for(i =0; i < size; i++) {
         printf("port: %s\n", ports.port[i].data);
         /// last port
         strcpy(port, ports.port[i].data);
@@ -163,7 +164,8 @@ Create a handle to this Lidar.
   char port[50] = "/dev/ydlidar";
   LidarPort ports;
   int size = lidarPortList(&ports);
-  for(int i =0; i < size; i++) {
+　 int i = 0;
+  for(i =0; i < size; i++) {
       printf("port: %s\n", ports.port[i].data);
       /// last port
       strcpy(port, ports.port[i].data);
