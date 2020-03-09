@@ -328,31 +328,31 @@ include_directories(
 find_package(ydlidar_sdk REQUIRED)
 #Include directories
 include_directories(
-  ${ydlidar_sdk_INCLUDE_DIRS}
+  ${YDLIDAR_SDK_INCLUDE_DIRS}
 )
 
 #link library directories
-link_directories(${ydlidar_sdk_LIBRARY_DIRS})
+link_directories(${YDLIDAR_SDK_LIBRARY_DIRS})
 
 add_executable(${PROJECT_NAME} lidar_tutorial.cpp)
 
 #Link your project to ydlidar_sdk library.
-target_link_libraries(${PROJECT_NAME} ${ydlidar_sdk_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${YDLIDAR_SDK_LIBRARIES})
 
 ############## YDLIDAR SDK END#####################################
 ```
 This will create one executable, lidar_tutorial, which by default will go into package directory of your build space.
 
 Linux:
-  * `ydlidar_sdk_LIBRARIES` includes `ydlidar_sdk pthread rt`
+  * `YDLIDAR_SDK_LIBRARIES` includes `ydlidar_sdk pthread rt`
   * If you need the pthread library at the end of the compilation flag,
-   you need to put `ydlidar_sdk_LIBRARIES` at the end.
+   you need to put `YDLIDAR_SDK_LIBRARIES` at the end.
 
 
 you can use the following variable to depend on all necessary targets: 
 
 ```cmake
-target_link_libraries(${PROJECT_NAME} ${ydlidar_sdk_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${YDLIDAR_SDK_LIBRARIES})
 ```
 Now run cmake: 
 ```cmake
