@@ -83,8 +83,11 @@ AngCorrect is the angle correction value, and its calculation formula is as foll
 if($Distance_{i}$ == 0) {
     $AngCorrect_{i}$ = 0;
 } else {
-    $AngCorrect_{i} = atan(21.8 * \frac{155.3 - Distance_{i}}{155.3*Distance_{i}})$
+    $AngCorrect_{i} = atan(21.8 * \frac{155.3 - Distance_{i}}{155.3*Distance_{i}}) * (180 / 3.1415926)$
 }
+
+Note:
+* $AngCorrect_{i}$ need to convert to degree.
 
 In the data packet, the 4th to 8th bytes are `28 E5 6F BD 79`, so `LSN = 0x28 = 40(dec)`, `FSA = 0x6FE5`, `LSA = 0x79BD`, and bring in the first-level solution formula, and get:
 $Angle_{FSA} = 223.78^{°}$ 
@@ -105,7 +108,7 @@ Similarly, $Angle_{i}(2,3, \ldots,LSN-1)$, can be obtained sequentially.
 for(int i = 0; i < LSN; i++) {
     if(Distance[i] > 0) {
         double AngCorrect = atan(21.8 * (155.3 - Distance[i]) / (155.3 * Distance[i]));
-        Angle[i] += AngCorrect;
+        Angle[i] += AngCorrect * 180 / M_PI;//M_PI 3.1415926
     }
     if(Angle[i] >= 360) {
         Angle[i] -= 360;
@@ -212,7 +215,7 @@ if(check_code == CS) {
         Angle[i] = i * Angle_Diff/ (LSN- 1) + Angle_FSA;
         if(Distance[i] > 0) {
             double AngCorrect = atan(21.8 * (155.3 - Distance[i]) / (155.3 * Distance[i]));
-            Angle[i] = Angle[i] + AngCorrect;
+            Angle[i] = Angle[i] + AngCorrect * 180 / M_PI;
         }
         if(Angle[i] >= 360) {
             Angle[i] -= 360;
