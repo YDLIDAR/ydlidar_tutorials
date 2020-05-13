@@ -63,13 +63,17 @@ code
 ```
 double Angle_FSA = (FSA >> 1) / 64;
 double Angle_LSA = (LSA >> 1) / 64;
-double angle_diff = Angle_FSA - Angle_LSA；
+double angle_diff = Angle_LSA - Angle_FSA；
 if(angle_diff < 0) {
     angle_diff += 360;
 }
 double Angle[LSN];
 for(int i = 0; i < LSN; i++) {
-    Angle[i] = i* angle_diff / (LSN - 1) + Angle_FSA;
+    if(LSN > 1) {
+        Angle[i] = i* angle_diff / (LSN - 1) + Angle_FSA;
+    } else {
+        Angle[i] = Angle_FSA;
+    }
 }
 
 ```
@@ -169,7 +173,11 @@ if(check_code == CS) {
         Angle_Diff = Angle_Diff + 360;
     }
     for(int i = 0; i < LSN; i++) {
-        Angle[i] = i * Angle_Diff/ (LSN- 1) + Angle_FSA;
+        if(LSN > 1) {
+            Angle[i] = i * Angle_Diff/ (LSN- 1) + Angle_FSA;
+        } else {
+            Angle[i] = Angle_FSA;
+        }
         if( Angle[i] >= 360) {
              Angle[i] -= 360;
         }

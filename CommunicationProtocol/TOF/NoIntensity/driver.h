@@ -4,9 +4,9 @@
 #include <stddef.h>
 
 /// one ring max point
-#define MAX_POINT_SIZE 720
+#define MAX_POINT_SIZE 3600
 /// max buffer size
-#define MAX_BUFFER_SIZE 512
+#define MAX_BUFFER_SIZE 2048
 /// 0xAA in packet pos
 #define HeaderPos 0
 /// Packet Header MSB

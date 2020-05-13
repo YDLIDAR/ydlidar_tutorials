@@ -139,7 +139,7 @@ void Lidar::bufDecode(uint8_t *buff, uint8_t len) {
   // one data is 2 byte, data size = len / 2
   int data_size = len / SiByteSize;
   // angle diff
-  float AngleDiff = AngleFSA - AngleFSA;
+  float AngleDiff = AngleLSA - AngleFSA;
   int i = 0;
   point.angle = 0;
   point.range = 0;
@@ -149,7 +149,9 @@ void Lidar::bufDecode(uint8_t *buff, uint8_t len) {
     AngleDiff = AngleDiff + 360.0 * 64;
   }
 
-  AngleDiff = AngleDiff / ((data_size - 1) * 1.0);
+  if (data_size > 1) {
+    AngleDiff = AngleDiff / ((data_size - 1) * 1.0);
+  }
 
   for (i = 0; i < len; i += SiByteSize) {
     point.angle = AngleDiff * (i / SiByteSize) + AngleFSA;

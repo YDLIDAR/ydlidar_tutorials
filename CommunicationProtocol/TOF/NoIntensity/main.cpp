@@ -61,9 +61,9 @@ int main(int argc, const char *argv[]) {
   timeout = timeout.simpleTimeout(2000);
   serial.setTimeout(timeout);
 #if defined(_WIN32)
-  ret = serial.open("COM7", 230400);
+  ret = serial.open("COM7", 512000);
 #else
-  ret = serial.open("/dev/ttyUSB0", 230400);
+  ret = serial.open("/dev/ttyUSB0", 512000);
 #endif
   serial.flushInput();
   lidar.SetScanDataCallback(onScanDataCallback);
