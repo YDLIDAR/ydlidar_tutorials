@@ -27,31 +27,34 @@ void Lidar::SetScanDataCallback(ScanDataCallback cb) {
 //exclusive OR
 uint16_t Lidar::XOR16(uint8_t *data, uint16_t size) {
   uint16_t check_code = 0x00;
-  uint16_t len = (size - PackageHeaderSize) / 2;
-  uint16_t *data_ptr = (uint16_t *)data;
-  uint16_t i = 0;
 
   if ((size - PackageHeaderSize) % SiByteSize != 0) {
     return 0xffff;
   }
 
-  for (i = 0; i < (PackageHeaderSize - 2) / 2; i++) {
-    check_code ^= *data_ptr++;
+  if (size < PackageHeaderSize) {
+    return 0xffff;
   }
 
-  data_ptr++;
-
-  for (i = 0; i < len; i++) {
-    check_code ^= *data_ptr++;
+  for (int i = 0; i < PackageHeaderSize - 2; i++) {
+    if (i % 2 == 1) {
+      check_code ^= data[i];
+    } else {
+      check_code ^= uint16_t(data[i] << 8);
+    }
   }
 
-  if ((size - PackageHeaderSize) % 2 == 1) {
-    check_code ^= data[size - 1];
+  for (int i = PackageHeaderSize; i < size; i++) {
+    if (i % SiByteSize == 1) {
+      check_code ^= data[i];
+    } else {
+      check_code ^= uint16_t(data[i] << 8);
+    }
   }
 
-  //switch high and low
-  return check_code >> 8 | check_code << 8;
+  return check_code;
 }
+
 
 //all data will catch from serial and send in here
 uint8_t Lidar::lidar_data_parsing(uint8_t data) {
