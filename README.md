@@ -31,11 +31,11 @@ This tutorial covers how to write a lidar tutorial in C++.
 ## C Tutorials
 LiDAR C turorials.
 ### [C Lidar Tutorial](c_tutorials/lidar_tutorial/writing_lidar_tutorial_c.md)
-This tutorial covers how to write a lidar tutorial in Python. 
+This tutorial covers how to write a lidar tutorial in C. 
 ## Python Tutorials
 LiDAR Python turorials.
 ### [Python Lidar Tutorial](python_tutorials/lidar_tutorial/writing_lidar_tutorial_python.md)
-This tutorial covers how to write a lidar tutorial in C. 
+This tutorial covers how to write a lidar tutorial in Python. 
 ## Communication Protocol
 YDLIDAR Communication protocol parsing tutorials.
 ### [YDLIDAR Communication Protocol](CommunicationProtocol/README.md)
